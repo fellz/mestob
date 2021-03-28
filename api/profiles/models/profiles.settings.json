@@ -1,0 +1,86 @@
+{
+  "kind": "collectionType",
+  "collectionName": "profiles",
+  "info": {
+    "name": "Profiles",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "fullname": {
+      "type": "string"
+    },
+    "about": {
+      "type": "richtext"
+    },
+    "contacts": {
+      "collection": "profiles"
+    },
+    "user": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "profile"
+    },
+    "avatar": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "city": {
+      "type": "string"
+    },
+    "country": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "social": {
+      "type": "integer"
+    },
+    "project_requests": {
+      "collection": "vacancies",
+      "via": "requests"
+    },
+    "project_confirmeds": {
+      "collection": "vacancies",
+      "via": "confirmeds"
+    },
+    "projects": {
+      "collection": "projects",
+      "via": "participants"
+    },
+    "myteams": {
+      "collection": "teams",
+      "via": "leader"
+    },
+    "team_requests": {
+      "collection": "teams",
+      "via": "requests"
+    },
+    "inteams": {
+      "collection": "teams",
+      "via": "participants"
+    },
+    "social_trackers": {
+      "collection": "social",
+      "via": "profile_who"
+    },
+    "skills": {
+      "collection": "skills"
+    },
+    "age": {
+      "type": "integer"
+    }
+  }
+}

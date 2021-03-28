@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "socials",
+  "info": {
+    "name": "Social"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "profile_who": {
+      "via": "social_trackers",
+      "model": "profiles"
+    },
+    "profile_whom": {
+      "model": "profiles"
+    }
+  }
+}

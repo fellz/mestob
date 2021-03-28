@@ -1,0 +1,67 @@
+{
+  "kind": "collectionType",
+  "collectionName": "projects",
+  "info": {
+    "name": "Projects"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "avatar": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "stage": {
+      "type": "enumeration",
+      "enum": [
+        "idea",
+        "design",
+        "mvp",
+        "product"
+      ]
+    },
+    "url": {
+      "type": "string"
+    },
+    "url_presentation": {
+      "type": "string"
+    },
+    "owner": {
+      "model": "profiles",
+      "via": "projects"
+    },
+    "vacancies": {
+      "collection": "vacancies",
+      "via": "project"
+    },
+    "participants": {
+      "via": "projects",
+      "collection": "profiles",
+      "dominant": true
+    },
+    "teams": {
+      "via": "projects",
+      "collection": "teams"
+    },
+    "team_requests": {
+      "via": "projects_reqs",
+      "collection": "teams"
+    }
+  }
+}

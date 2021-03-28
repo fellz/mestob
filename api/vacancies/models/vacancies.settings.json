@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "vacancies",
+  "info": {
+    "name": "Vacancies"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "pay": {
+      "type": "boolean"
+    },
+    "filled": {
+      "type": "boolean"
+    },
+    "skill": {
+      "model": "skills"
+    },
+    "requests": {
+      "via": "project_requests",
+      "collection": "profiles",
+      "dominant": true
+    },
+    "confirmeds": {
+      "via": "project_confirmeds",
+      "collection": "profiles",
+      "dominant": true
+    },
+    "project": {
+      "via": "vacancies",
+      "model": "projects"
+    }
+  }
+}

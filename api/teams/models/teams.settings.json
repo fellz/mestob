@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "teams",
+  "info": {
+    "name": "Teams"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "leader": {
+      "via": "myteams",
+      "model": "profiles"
+    },
+    "about": {
+      "type": "richtext"
+    },
+    "projects": {
+      "collection": "projects",
+      "via": "teams",
+      "dominant": true
+    },
+    "requests": {
+      "via": "team_requests",
+      "collection": "profiles",
+      "dominant": true
+    },
+    "projects_reqs": {
+      "collection": "projects",
+      "via": "team_requests",
+      "dominant": true
+    },
+    "participants": {
+      "via": "inteams",
+      "collection": "profiles",
+      "dominant": true
+    }
+  }
+}

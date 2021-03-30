@@ -2,7 +2,8 @@
   "kind": "collectionType",
   "collectionName": "projects",
   "info": {
-    "name": "Projects"
+    "name": "Projects",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -44,24 +45,24 @@
     },
     "owner": {
       "model": "profiles",
-      "via": "projects"
+      "via": "project"
     },
     "vacancies": {
       "collection": "vacancies",
       "via": "project"
     },
     "participants": {
-      "via": "projects",
       "collection": "profiles",
+      "via": "projects",
       "dominant": true
     },
     "teams": {
-      "via": "projects",
-      "collection": "teams"
+      "collection": "teams",
+      "via": "projects"
     },
     "team_requests": {
-      "via": "projects_reqs",
-      "collection": "teams"
+      "collection": "teams",
+      "via": "projects_reqs"
     }
   }
 }

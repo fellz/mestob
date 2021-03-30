@@ -21,8 +21,8 @@
       "type": "richtext"
     },
     "projects": {
-      "collection": "projects",
       "via": "teams",
+      "collection": "projects",
       "dominant": true
     },
     "requests": {
@@ -31,8 +31,8 @@
       "dominant": true
     },
     "projects_reqs": {
-      "collection": "projects",
       "via": "team_requests",
+      "collection": "projects",
       "dominant": true
     },
     "participants": {

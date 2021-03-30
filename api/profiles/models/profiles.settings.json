@@ -56,10 +56,6 @@
       "collection": "vacancies",
       "via": "confirmeds"
     },
-    "projects": {
-      "collection": "projects",
-      "via": "participants"
-    },
     "myteams": {
       "collection": "teams",
       "via": "leader"
@@ -81,6 +77,14 @@
     },
     "age": {
       "type": "integer"
+    },
+    "project": {
+      "via": "owner",
+      "model": "projects"
+    },
+    "projects": {
+      "via": "participants",
+      "collection": "projects"
     }
   }
 }
